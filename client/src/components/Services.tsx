@@ -4,6 +4,7 @@ import { BarChart3, Camera, Globe, Zap } from "lucide-react";
 import adImage from "@assets/generated_images/Futuristic_social_media_ad_campaign_visualization_6172f74d.png";
 import creativeImage from "@assets/generated_images/Professional_camera_lens_with_blue_lighting_1338cc72.png";
 import webImage from "@assets/generated_images/Abstract_glowing_website_wireframe_fcdc7fe9.png";
+import ScrollAnimation from "./ScrollAnimation";
 
 const services = [
   {
@@ -41,50 +42,49 @@ export default function Services() {
     <section id="services" className="py-24 bg-background relative">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">What we do</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            Stop pouring money into ads that don’t work. Our system gives us full control, continuously optimizes campaigns, and drives predictable results.
-          </p>
+          <ScrollAnimation variant="fadeUp">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-4">What we do</h2>
+          </ScrollAnimation>
+          <ScrollAnimation variant="fadeUp" delay={0.2}>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+              Stop pouring money into ads that don’t work. Our system gives us full control, continuously optimizes campaigns, and drives predictable results.
+            </p>
+          </ScrollAnimation>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className={`${service.colSpan}`}
-            >
-              <Card className="h-full bg-card border-white/5 hover:border-primary/30 transition-all duration-300 overflow-hidden group">
-                <div className="relative h-full flex flex-col">
-                  {service.image && (
-                    <div className="absolute inset-0 z-0">
-                      <div className="absolute inset-0 bg-gradient-to-t from-card via-card/90 to-transparent z-10" />
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
-                      />
-                    </div>
-                  )}
-                  
-                  <CardHeader className="relative z-20 pt-8">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary border border-primary/20">
-                      <service.icon size={24} />
-                    </div>
-                    <CardTitle className="text-2xl font-bold text-white">{service.title}</CardTitle>
-                  </CardHeader>
-                  
-                  <CardContent className="relative z-20 flex-grow">
-                    <CardDescription className="text-gray-300 text-base leading-relaxed">
-                      {service.description}
-                    </CardDescription>
-                  </CardContent>
-                </div>
-              </Card>
-            </motion.div>
+            <div key={index} className={`${service.colSpan}`}>
+              <ScrollAnimation variant="fadeUp" delay={index * 0.1} className="h-full">
+                <Card className="h-full bg-card border-white/5 hover:border-primary/30 transition-all duration-300 overflow-hidden group">
+                  <div className="relative h-full flex flex-col">
+                    {service.image && (
+                      <div className="absolute inset-0 z-0">
+                        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/90 to-transparent z-10" />
+                        <img 
+                          src={service.image} 
+                          alt={service.title} 
+                          className="w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                    )}
+                    
+                    <CardHeader className="relative z-20 pt-8">
+                      <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary border border-primary/20 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <service.icon size={24} />
+                      </div>
+                      <CardTitle className="text-2xl font-bold text-white">{service.title}</CardTitle>
+                    </CardHeader>
+                    
+                    <CardContent className="relative z-20 flex-grow">
+                      <CardDescription className="text-gray-300 text-base leading-relaxed">
+                        {service.description}
+                      </CardDescription>
+                    </CardContent>
+                  </div>
+                </Card>
+              </ScrollAnimation>
+            </div>
           ))}
         </div>
       </div>

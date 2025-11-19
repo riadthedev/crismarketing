@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import ScrollAnimation from "./ScrollAnimation";
 
 const reasons = [
   {
@@ -17,30 +18,36 @@ const reasons = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-24 bg-secondary/20 border-y border-white/5">
+    <section id="why-us" className="py-24 bg-secondary/20 border-y border-white/5 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              Why Businesses <br />
-              <span className="text-primary">Choose Us</span>
-            </h2>
-            <p className="text-lg text-gray-400 mb-8">
-              We don't just run ads; we build systems that generate revenue. Our approach is holistic, covering every aspect of the customer journey.
-            </p>
+            <ScrollAnimation variant="fadeRight">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
+                Why Businesses <br />
+                <span className="text-primary">Choose Us</span>
+              </h2>
+            </ScrollAnimation>
+            <ScrollAnimation variant="fadeRight" delay={0.2}>
+              <p className="text-lg text-gray-400 mb-8">
+                We don't just run ads; we build systems that generate revenue. Our approach is holistic, covering every aspect of the customer journey.
+              </p>
+            </ScrollAnimation>
           </div>
           
           <div className="space-y-6">
             {reasons.map((reason, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 rounded-lg bg-card/50 border border-white/5 hover:border-primary/20 transition-colors">
-                <div className="flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-primary mt-1" />
+              <ScrollAnimation key={index} variant="fadeLeft" delay={index * 0.15}>
+                <div className="flex items-start space-x-4 p-6 rounded-lg bg-card/50 border border-white/5 hover:border-primary/20 transition-colors hover:bg-card/80">
+                  <div className="flex-shrink-0">
+                    <CheckCircle2 className="w-6 h-6 text-primary mt-1" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-2">{reason.title}</h3>
+                    <p className="text-gray-400">{reason.description}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{reason.title}</h3>
-                  <p className="text-gray-400">{reason.description}</p>
-                </div>
-              </div>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
