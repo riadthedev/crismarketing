@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
@@ -71,7 +71,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             <Link href="/">
               <a className="text-2xl font-heading font-bold text-white tracking-tighter group cursor-pointer">
-                REDS<span className="text-primary group-hover:text-blue-400 transition-colors">MARKETING</span>
+                CRIS<span className="text-primary group-hover:text-blue-400 transition-colors">MARKETING</span>
               </a>
             </Link>
 
@@ -115,33 +115,36 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-white/10 p-4 overflow-hidden"
-          >
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <button 
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)} 
-                  className={cn(
-                    "text-left text-sm font-medium transition-colors",
-                    activeSection === link.id ? "text-primary" : "text-gray-300 hover:text-primary"
-                  )}
-                >
-                  {link.label}
-                </button>
-              ))}
-              <Button onClick={() => scrollToSection("contact")} className="w-full bg-primary text-background hover:bg-primary/90 font-bold">
-                Apply Now
-              </Button>
-            </div>
-          </motion.div>
-        )}
+        {/* Mobile Menu with Smoother Animation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden bg-background/95 backdrop-blur-md border-b border-white/10 overflow-hidden"
+            >
+              <div className="flex flex-col space-y-4 p-6">
+                {navLinks.map((link) => (
+                  <button 
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)} 
+                    className={cn(
+                      "text-left text-lg font-medium transition-colors py-2 border-b border-white/5",
+                      activeSection === link.id ? "text-primary" : "text-gray-300 hover:text-primary"
+                    )}
+                  >
+                    {link.label}
+                  </button>
+                ))}
+                <Button onClick={() => scrollToSection("contact")} className="w-full bg-primary text-background hover:bg-primary/90 font-bold mt-4 h-12 text-lg">
+                  Apply Now
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
         
         {/* Scroll Progress Bar */}
         <motion.div

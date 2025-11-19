@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
         <ScrollAnimation variant="fadeUp" duration={0.5}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-heading font-bold text-white mb-2">REDS<span className="text-primary">MARKETING</span></h3>
+              <h3 className="text-xl font-heading font-bold text-white mb-2">CRIS<span className="text-primary">MARKETING</span></h3>
               <p className="text-sm text-gray-500">AI-Powered Marketing Solutions</p>
             </div>
             
@@ -29,11 +30,17 @@ export default function Footer() {
           </div>
           
           <div className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Reds Marketing. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Cris Marketing. All rights reserved.</p>
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
-              <a href="#" className="hover:text-white transition-colors">Disclaimer</a>
+              <Link href="/privacy">
+                <a className="hover:text-white transition-colors">Privacy Policy</a>
+              </Link>
+              <Link href="/terms">
+                <a className="hover:text-white transition-colors">Terms</a>
+              </Link>
+              <Link href="/disclaimer">
+                <a className="hover:text-white transition-colors">Disclaimer</a>
+              </Link>
             </div>
           </div>
         </ScrollAnimation>
