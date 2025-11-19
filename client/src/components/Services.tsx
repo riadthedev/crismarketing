@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart3, Camera, Globe, Zap } from "lucide-react";
-import adImage from "@assets/generated_images/Futuristic_blue_analytics_dashboard_c63f7cea.png";
+import adImage from "@assets/generated_images/Futuristic_social_media_ad_campaign_visualization_6172f74d.png";
 import creativeImage from "@assets/generated_images/Professional_camera_lens_with_blue_lighting_1338cc72.png";
 import webImage from "@assets/generated_images/Abstract_glowing_website_wireframe_fcdc7fe9.png";
 
