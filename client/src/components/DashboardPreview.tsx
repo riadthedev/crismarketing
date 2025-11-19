@@ -42,15 +42,15 @@ export default function DashboardPreview() {
   }, []);
 
   return (
-    <div className="relative w-full h-full perspective-[2000px] group">
+    <div className="relative w-full h-full perspective-[2000px] group flex items-center justify-center">
       {/* Floating Effect Wrapper */}
       <motion.div
         animate={{ y: [-10, 10, -10] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="w-full transform-style-3d transition-all duration-500 group-hover:rotate-y-[-5deg] group-hover:rotate-x-[5deg] rotate-y-[-12deg] rotate-x-[6deg]"
+        className="w-full transform-style-3d transition-all duration-500 group-hover:rotate-y-[-2deg] group-hover:rotate-x-[2deg] rotate-y-[-6deg] rotate-x-[3deg] lg:rotate-y-[-12deg] lg:rotate-x-[6deg]"
       >
         {/* Main Dashboard Card */}
-        <div className="bg-[#0B1120]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden flex flex-col w-full aspect-[4/3]">
+        <div className="bg-[#0B1120]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden flex flex-col w-full aspect-[4/3] ring-1 ring-white/10 shadow-primary/10">
           
           {/* Dashboard Header */}
           <div className="h-12 border-b border-white/10 flex items-center px-4 gap-4 bg-white/5">
