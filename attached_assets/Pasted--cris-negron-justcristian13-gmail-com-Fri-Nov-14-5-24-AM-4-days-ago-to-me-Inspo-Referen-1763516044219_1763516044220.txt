@@ -1,0 +1,70 @@
+
+cris negron <justcristian13@gmail.com>
+Fri, Nov 14, 5:24 AM (4 days ago)
+to me
+
+Inspo/ Reference: https://www.redsmarketing.co, https://www.brezmarketing.net
+
+Colors: Black, Blue (modern look)
+
+Info: 
+Home page:
+Heading: Lead flow engineered for success. Qualified leads, better conversions, and measurable results.
+
+Subheading: We combine data, precision targeting, and automation to create a consistent stream of qualified leads, giving your business predictable and scalable growth.
+
+Call to action: Apply now.
+
+What we do:
+
+“We generate high-quality leads through targeted advertising campaigns on Meta platforms, including Facebook and Instagram, with visually compelling, high-converting creatives. Our team creates ads designed to capture attention, engage your audience, and drive real results. To support your growth further, we offer services to optimize your sales funnel, build high-converting websites, and provide professional videography and photography—ensuring your marketing performs at the highest level.”
+
+“Stop pouring money into ads that don’t work. Our ad management system gives us full control, continuously optimizes campaigns in real time, and drives predictable, scalable results—turning clicks into real customers.”
+
+Why Businesses Choose Us:
+
+Data driven targeting that finds qualified customers, tailored to your business.
+High-converting AI-driven creatives that turn views into leads.
+Start-to-Finish campaign management—all done for you.
+Our Services:
+
+Advertisements and Campaigns:
+We run targeted ad campaigns on Meta platforms, including Facebook and Instagram, designed to attract high-quality leads and drive real results for your business.
+
+Creative & Visual Content:
+
+We create high-quality videos and photography designed specifically for your ads and marketing campaigns. Our professional visuals help your brand stand out, capture attention, and engage your audience—turning creative content into real, measurable results.
+
+Funnel Optimization:
+We analyze your sales funnel to find gaps and missing pieces, ensuring every step converts potential customers into booked appointments or sales.
+
+Website Design & User Experience:
+We create user-friendly, high-converting websites that guide visitors seamlessly from discovery to action—getting your business’s calendar booked.
+
+Contact Page Script:
+
+Headline:
+“Your Growth Starts Here.”
+
+Subheadline: 
+
+“Book a free strategy call and see how we can fill your pipeline with qualified leads, optimize your funnels, and get your calendar fully booked.”
+
+Form Fields:
+
+Name
+Email
+Phone Number
+Message
+CTA Button:
+“Book My Free Strategy Call”
+
+Optional Supporting Text (Below the Form):
+
+“No strings attached. Just actionable insights to help your business grow.”
+“We’ll show you exactly how our strategies bring more leads, conversions, and booked appointments.”
+FOOTER:
+
+© [Agency Name] — AI-Powered Marketing Solutions
+Privacy Policy | Terms | Disclaimer
+Social Media Icons
