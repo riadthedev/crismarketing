@@ -47,13 +47,13 @@ export default function DashboardPreview() {
       <motion.div
         animate={{ y: [-10, 10, -10] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="w-full transform-style-3d transition-all duration-500 group-hover:rotate-y-[-2deg] group-hover:rotate-x-[2deg] rotate-y-[-6deg] rotate-x-[3deg] lg:rotate-y-[-12deg] lg:rotate-x-[6deg]"
+        className="w-full h-full transform-style-3d transition-all duration-500 group-hover:rotate-y-[-2deg] group-hover:rotate-x-[2deg] rotate-y-[-6deg] rotate-x-[3deg] lg:rotate-y-[-12deg] lg:rotate-x-[6deg]"
       >
         {/* Main Dashboard Card */}
-        <div className="bg-[#0B1120]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden flex flex-col w-full aspect-[4/3] ring-1 ring-white/10 shadow-primary/10">
+        <div className="bg-[#0B1120]/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden flex flex-col w-full h-full ring-1 ring-white/10 shadow-primary/10">
           
           {/* Dashboard Header */}
-          <div className="h-12 border-b border-white/10 flex items-center px-4 gap-4 bg-white/5">
+          <div className="h-12 border-b border-white/10 flex items-center px-4 gap-4 bg-white/5 shrink-0">
             <div className="flex gap-1.5 shrink-0">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
@@ -74,10 +74,10 @@ export default function DashboardPreview() {
             </div>
 
             {/* Main Content - Full width on mobile */}
-            <div className="col-span-12 sm:col-span-9 flex flex-col gap-4">
+            <div className="col-span-12 sm:col-span-9 flex flex-col gap-4 h-full">
               
               {/* Top Stats Row */}
-              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 shrink-0">
                 <div className="bg-white/5 p-2 sm:p-3 rounded-lg border border-white/5">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1 gap-1">
                     <Users size={14} className="text-primary" />
@@ -105,8 +105,8 @@ export default function DashboardPreview() {
               </div>
 
               {/* Chart Section */}
-              <div className="flex-1 bg-white/5 rounded-lg border border-white/5 p-3 sm:p-4 flex flex-col relative overflow-hidden min-h-0">
-                <div className="flex justify-between items-center mb-2 sm:mb-4">
+              <div className="flex-1 bg-white/5 rounded-lg border border-white/5 p-3 sm:p-4 flex flex-col relative overflow-hidden min-h-[120px]">
+                <div className="flex justify-between items-center mb-2 sm:mb-4 shrink-0">
                   <h3 className="text-[10px] sm:text-xs font-medium text-gray-300 flex items-center gap-2 truncate">
                     <TrendingUp size={12} className="text-green-400 shrink-0" />
                     <span className="truncate">Lead Acquisition</span>
@@ -117,7 +117,7 @@ export default function DashboardPreview() {
                   </div>
                 </div>
                 
-                <div className="flex-1 flex items-end gap-1 sm:gap-2 px-1 sm:px-2 pb-2 relative z-10">
+                <div className="flex-1 flex items-end gap-1 sm:gap-2 px-1 sm:px-2 pb-2 relative z-10 w-full h-full">
                    {/* Chart Bars */}
                    <ChartBar height="30%" delay={0.1} />
                    <ChartBar height="45%" delay={0.2} />
@@ -140,8 +140,8 @@ export default function DashboardPreview() {
                 </div>
               </div>
 
-              {/* Recent Activity Feed - Small - Hide on very small screens if needed, but flex-col helps */}
-              <div className="hidden xs:block h-20 sm:h-24 bg-white/5 rounded-lg border border-white/5 overflow-hidden relative">
+              {/* Recent Activity Feed - Small - Hidden on mobile to save space for chart */}
+              <div className="hidden sm:block h-20 sm:h-24 bg-white/5 rounded-lg border border-white/5 overflow-hidden relative shrink-0">
                  <div className="absolute top-0 left-0 right-0 h-4 sm:h-6 bg-gradient-to-b from-[#0B1120]/50 to-transparent z-10 pointer-events-none" />
                  <div className="p-2">
                     <ActivityItem name="Sarah M." action="New Lead Captured" time="2m" delay={1.2} />
