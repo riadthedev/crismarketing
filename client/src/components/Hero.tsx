@@ -22,14 +22,6 @@ export default function Hero() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-20">
         <div className="max-w-4xl mx-auto text-center">
-          <ScrollAnimation variant="blurIn" duration={0.8}>
-            <div className="flex justify-center mb-6">
-              <span className="inline-block py-1 px-3 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase backdrop-blur-sm">
-                Engineered for Growth
-              </span>
-            </div>
-          </ScrollAnimation>
-          
           <ScrollAnimation variant="fadeUp" delay={0.2} duration={0.8}>
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white leading-tight mb-6 drop-shadow-2xl">
               Lead flow engineered <br className="hidden md:block" />
