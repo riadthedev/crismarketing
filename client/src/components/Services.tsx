@@ -4,6 +4,7 @@ import { BarChart3, Camera, Globe, Zap } from "lucide-react";
 import adImage from "@assets/generated_images/Futuristic_social_media_ad_campaign_visualization_6172f74d.png";
 import creativeImage from "@assets/generated_images/Professional_camera_lens_with_blue_lighting_1338cc72.png";
 import webImage from "@assets/generated_images/Abstract_glowing_website_wireframe_fcdc7fe9.png";
+import funnelImage from "@assets/generated_images/Abstract_digital_sales_funnel_visualization_f1b97fbf.png";
 import ScrollAnimation from "./ScrollAnimation";
 
 const services = [
@@ -25,7 +26,7 @@ const services = [
     title: "Funnel Optimization",
     description: "We analyze your sales funnel to find gaps, ensuring every step converts potential customers into booked appointments.",
     icon: Zap,
-    image: null, // No image for this one, style differently
+    image: funnelImage, 
     colSpan: "md:col-span-1"
   },
   {
