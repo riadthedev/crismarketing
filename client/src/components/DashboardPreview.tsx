@@ -19,15 +19,15 @@ const ActivityItem = ({ name, action, time, delay }: { name: string; action: str
     className="flex items-center justify-between p-2 text-xs border-b border-white/5 last:border-0"
   >
     <div className="flex items-center gap-2">
-      <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold">
+      <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
         {name.charAt(0)}
       </div>
-      <div className="flex flex-col">
-        <span className="font-medium text-gray-200">{name}</span>
-        <span className="text-[10px] text-gray-500">{action}</span>
+      <div className="flex flex-col min-w-0">
+        <span className="font-medium text-gray-200 truncate">{name}</span>
+        <span className="text-[10px] text-gray-500 truncate">{action}</span>
       </div>
     </div>
-    <span className="text-[10px] text-gray-500">{time}</span>
+    <span className="text-[10px] text-gray-500 shrink-0 ml-2">{time}</span>
   </motion.div>
 );
 
@@ -54,70 +54,70 @@ export default function DashboardPreview() {
           
           {/* Dashboard Header */}
           <div className="h-12 border-b border-white/10 flex items-center px-4 gap-4 bg-white/5">
-            <div className="flex gap-1.5">
+            <div className="flex gap-1.5 shrink-0">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
               <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
             </div>
             <div className="flex-1 h-6 bg-white/5 rounded-md mx-4" />
-            <div className="w-6 h-6 rounded-full bg-primary/20" />
+            <div className="w-6 h-6 rounded-full bg-primary/20 shrink-0" />
           </div>
 
           {/* Dashboard Content Grid */}
           <div className="flex-1 p-4 grid grid-cols-12 gap-4 overflow-hidden">
             
-            {/* Sidebar */}
-            <div className="col-span-3 flex flex-col gap-2">
+            {/* Sidebar - Hidden on Mobile */}
+            <div className="hidden sm:flex col-span-3 flex-col gap-2">
                {[1, 2, 3, 4].map((i) => (
                  <div key={i} className="h-8 w-full bg-white/5 rounded-md" />
                ))}
             </div>
 
-            {/* Main Content */}
-            <div className="col-span-9 flex flex-col gap-4">
+            {/* Main Content - Full width on mobile */}
+            <div className="col-span-12 sm:col-span-9 flex flex-col gap-4">
               
               {/* Top Stats Row */}
-              <div className="grid grid-cols-3 gap-3">
-                <div className="bg-white/5 p-3 rounded-lg border border-white/5">
-                  <div className="flex items-center justify-between mb-1">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                <div className="bg-white/5 p-2 sm:p-3 rounded-lg border border-white/5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1 gap-1">
                     <Users size={14} className="text-primary" />
                     <span className="text-[10px] text-green-400">+12%</span>
                   </div>
-                  <div className="text-[10px] text-gray-400">Total Leads</div>
-                  <div className="text-lg font-bold text-white">{count}</div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-400 truncate">Total Leads</div>
+                  <div className="text-sm sm:text-lg font-bold text-white">{count}</div>
                 </div>
-                <div className="bg-white/5 p-3 rounded-lg border border-white/5">
-                  <div className="flex items-center justify-between mb-1">
+                <div className="bg-white/5 p-2 sm:p-3 rounded-lg border border-white/5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1 gap-1">
                     <MousePointerClick size={14} className="text-blue-400" />
                     <span className="text-[10px] text-green-400">+5.2%</span>
                   </div>
-                  <div className="text-[10px] text-gray-400">CTR</div>
-                  <div className="text-lg font-bold text-white">4.8%</div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-400 truncate">CTR</div>
+                  <div className="text-sm sm:text-lg font-bold text-white">4.8%</div>
                 </div>
-                <div className="bg-white/5 p-3 rounded-lg border border-white/5">
-                  <div className="flex items-center justify-between mb-1">
+                <div className="bg-white/5 p-2 sm:p-3 rounded-lg border border-white/5">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1 gap-1">
                     <Activity size={14} className="text-purple-400" />
                     <span className="text-[10px] text-green-400">+24%</span>
                   </div>
-                  <div className="text-[10px] text-gray-400">Active Campaigns</div>
-                  <div className="text-lg font-bold text-white">12</div>
+                  <div className="text-[9px] sm:text-[10px] text-gray-400 truncate">Active Camp.</div>
+                  <div className="text-sm sm:text-lg font-bold text-white">12</div>
                 </div>
               </div>
 
               {/* Chart Section */}
-              <div className="flex-1 bg-white/5 rounded-lg border border-white/5 p-4 flex flex-col relative overflow-hidden">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xs font-medium text-gray-300 flex items-center gap-2">
-                    <TrendingUp size={12} className="text-green-400" />
-                    Lead Acquisition Trend
+              <div className="flex-1 bg-white/5 rounded-lg border border-white/5 p-3 sm:p-4 flex flex-col relative overflow-hidden min-h-0">
+                <div className="flex justify-between items-center mb-2 sm:mb-4">
+                  <h3 className="text-[10px] sm:text-xs font-medium text-gray-300 flex items-center gap-2 truncate">
+                    <TrendingUp size={12} className="text-green-400 shrink-0" />
+                    <span className="truncate">Lead Acquisition</span>
                   </h3>
-                  <div className="flex gap-1">
-                    <div className="w-12 h-4 bg-white/10 rounded text-[8px] flex items-center justify-center text-gray-400">Daily</div>
-                    <div className="w-12 h-4 bg-primary/20 rounded text-[8px] flex items-center justify-center text-primary font-medium">Weekly</div>
+                  <div className="flex gap-1 shrink-0">
+                    <div className="w-10 sm:w-12 h-4 bg-white/10 rounded text-[8px] flex items-center justify-center text-gray-400">Daily</div>
+                    <div className="w-10 sm:w-12 h-4 bg-primary/20 rounded text-[8px] flex items-center justify-center text-primary font-medium">Weekly</div>
                   </div>
                 </div>
                 
-                <div className="flex-1 flex items-end gap-2 px-2 pb-2 relative z-10">
+                <div className="flex-1 flex items-end gap-1 sm:gap-2 px-1 sm:px-2 pb-2 relative z-10">
                    {/* Chart Bars */}
                    <ChartBar height="30%" delay={0.1} />
                    <ChartBar height="45%" delay={0.2} />
@@ -140,13 +140,13 @@ export default function DashboardPreview() {
                 </div>
               </div>
 
-              {/* Recent Activity Feed - Small */}
-              <div className="h-24 bg-white/5 rounded-lg border border-white/5 overflow-hidden relative">
-                 <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-[#0B1120]/50 to-transparent z-10 pointer-events-none" />
+              {/* Recent Activity Feed - Small - Hide on very small screens if needed, but flex-col helps */}
+              <div className="hidden xs:block h-20 sm:h-24 bg-white/5 rounded-lg border border-white/5 overflow-hidden relative">
+                 <div className="absolute top-0 left-0 right-0 h-4 sm:h-6 bg-gradient-to-b from-[#0B1120]/50 to-transparent z-10 pointer-events-none" />
                  <div className="p-2">
-                    <ActivityItem name="Sarah M." action="New Lead Captured" time="2m ago" delay={1.2} />
-                    <ActivityItem name="Camp. Alpha" action="Optimization Complete" time="5m ago" delay={1.5} />
-                    <ActivityItem name="John D." action="Call Scheduled" time="12m ago" delay={1.8} />
+                    <ActivityItem name="Sarah M." action="New Lead Captured" time="2m" delay={1.2} />
+                    <ActivityItem name="Camp. Alpha" action="Optimization Complete" time="5m" delay={1.5} />
+                    <ActivityItem name="John D." action="Call Scheduled" time="12m" delay={1.8} />
                  </div>
               </div>
             </div>
