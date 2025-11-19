@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import HeroBackground from "./HeroBackground";
 import ScrollAnimation from "./ScrollAnimation";
-import dashboardImage from "@assets/generated_images/Futuristic_dashboard_with_upward_trending_leads_graph_3c859ba3.png";
+import DashboardPreview from "./DashboardPreview";
 
 export default function Hero() {
   const scrollToContact = () => {
@@ -61,44 +61,14 @@ export default function Hero() {
             </ScrollAnimation>
           </div>
 
-          {/* Right Column: Dashboard Visual */}
-          <div className="relative hidden lg:block">
-             <ScrollAnimation variant="fadeLeft" delay={0.4} duration={1.0}>
-                <div className="relative z-10">
-                  <motion.div
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{ 
-                      duration: 6, 
-                      repeat: Infinity, 
-                      ease: "easeInOut" 
-                    }}
-                  >
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-card/30 backdrop-blur-md group">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-500" />
-                      <img 
-                        src={dashboardImage} 
-                        alt="Leads Growth Dashboard" 
-                        className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      />
-                      
-                      {/* Overlay Glass Card Effect */}
-                      <div className="absolute bottom-6 left-6 right-6 bg-background/80 backdrop-blur-xl p-4 rounded-xl border border-white/10 flex items-center justify-between">
-                         <div>
-                            <p className="text-xs text-gray-400 uppercase tracking-wider font-bold">Total Leads</p>
-                            <p className="text-2xl font-bold text-white">1,248 <span className="text-green-400 text-sm ml-2">▲ 128%</span></p>
-                         </div>
-                         <div className="h-10 w-32 bg-gradient-to-r from-primary/20 to-transparent rounded-full relative overflow-hidden">
-                            <div className="absolute top-0 left-0 bottom-0 bg-primary/50 w-[70%]" />
-                         </div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Decorative glowing elements behind */}
-                  <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] pointer-events-none" />
-                  <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
-                </div>
+          {/* Right Column: HTML/CSS 3D Dashboard Visual */}
+          <div className="relative hidden lg:block h-[500px] w-full">
+             <ScrollAnimation variant="fadeLeft" delay={0.4} duration={1.0} className="w-full h-full">
+                <DashboardPreview />
              </ScrollAnimation>
+             
+             {/* Background Glow */}
+             <div className="absolute -top-20 -right-20 w-72 h-72 bg-primary/20 rounded-full blur-[100px] pointer-events-none -z-10" />
           </div>
 
         </div>
