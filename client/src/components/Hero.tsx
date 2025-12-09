@@ -27,7 +27,7 @@ export default function Hero() {
           {/* Left Column: Text Content */}
           <div className="text-left max-w-2xl flex flex-col justify-center h-full">
             <ScrollAnimation variant="fadeRight" delay={0.2} duration={0.8}>
-              <h1 className="text-5xl md:text-7xl font-heading font-bold text-white leading-tight mb-6 drop-shadow-2xl">
+              <h1 className="text-5xl md:text-7xl font-heading font-normal text-white leading-tight mb-6 drop-shadow-2xl">
                 Lead flow engineered <br className="hidden md:block" />
                 <span className="text-primary bg-clip-text">
                   for success.
