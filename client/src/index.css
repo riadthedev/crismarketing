@@ -38,7 +38,7 @@
   --color-ring: hsl(var(--ring));
   
   --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Space Grotesk', sans-serif;
+  --font-heading: 'Playfair Display', serif;
 
   --radius: 0.5rem;
 }

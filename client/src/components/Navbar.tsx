@@ -70,7 +70,7 @@ export default function Navbar() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-20">
             <Link href="/">
-              <a className="text-2xl font-heading font-bold text-white tracking-tighter group cursor-pointer">
+              <a className="text-2xl font-bold text-white tracking-tighter group cursor-pointer">
                 CRIS<span className="text-primary group-hover:text-blue-400 transition-colors">MARKETING</span>
               </a>
             </Link>

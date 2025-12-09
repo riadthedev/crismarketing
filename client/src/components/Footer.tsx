@@ -9,7 +9,7 @@ export default function Footer() {
         <ScrollAnimation variant="fadeUp" duration={0.5}>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-heading font-bold text-white mb-2">CRIS<span className="text-primary">MARKETING</span></h3>
+              <h3 className="text-xl font-bold text-white mb-2">CRIS<span className="text-primary">MARKETING</span></h3>
               <p className="text-sm text-gray-500">AI-Powered Marketing Solutions</p>
             </div>
             
