@@ -13,6 +13,13 @@ export default function Hero() {
     }
   };
 
+  const scrollToServices = () => {
+    const element = document.getElementById("services");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-32 md:pt-20 overflow-hidden bg-background">
       {/* Custom Animated Background */}
@@ -53,6 +60,7 @@ export default function Hero() {
                 <Button 
                   size="lg" 
                   variant="outline"
+                  onClick={scrollToServices}
                   className="w-full sm:w-auto border-white/10 text-white hover:bg-white/5 h-14 px-8 text-lg backdrop-blur-sm"
                 >
                   Our Services <ArrowRight className="ml-2 h-4 w-4" />
